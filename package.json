@@ -1,0 +1,27 @@
+{
+  "name": "webserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.0",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VinodhGowda/nodejs-weather-application.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VinodhGowda/nodejs-weather-application/issues"
+  },
+  "homepage": "https://github.com/VinodhGowda/nodejs-weather-application#readme"
+}
