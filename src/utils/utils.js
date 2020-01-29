@@ -24,13 +24,13 @@ const geocode = (address, callback) => {
     })
 }
 
-const forecast = (unit , { latitude:lat, longitude:long }, callback) => {
+const forecast = (unit='si' , { latitude:lat, longitude:long }, callback) => {
     const weatherUrl = "https://api.darksky.net/forecast/edfe7831ab95861c69a49ec897c5dca0/" + lat + "," + long + "?units=" + unit
 
     console.log(weatherUrl)
 
-    console.log(lat)
-    console.log(long)
+    // console.log(lat)
+    // console.log(long)
 
     request({ url: weatherUrl, json: true }, (error, {body}) => {
         if (error) {

@@ -28,26 +28,25 @@ app.get('/weather', (req, res) => {
         return res.send({
             error: "You must provide an address"
         })
-    } else {
-        utils.geocode(req.query.address, (error, location = {}) => {
+    }
+    utils.geocode(req.query.address, (error, location = {}) => {
+        if (error) {
+            return res.send({ error });
+        }
+        utils.forecast(req.query.unit, location, (error, foreCastData) => {
+            console.log(req.query.unit)
             if (error) {
                 return res.send({ error });
             }
-            console.log(location)
-            utils.forecast(req.query.unit, location, (error, foreCastData) => {
-                // console.log(req.query.unit)
-                if (error) {
-                    return res.send({ error });
-                }
 
-                return res.send({
-                    location,
-                    forecast: foreCastData,
-                    address: req.query.address
-                })
+            return res.send({
+                location,
+                forecast: foreCastData,
+                address: req.query.address
             })
         })
-    }
+    })
+
 })
 
 app.get('/about', (req, res) => {

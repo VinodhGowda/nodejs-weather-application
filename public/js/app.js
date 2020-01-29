@@ -2,7 +2,7 @@ console.log("Client side javascript file loaded.");
 
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
-const units = document.querySelector('unit');
+// const units = document.querySelector('#scale');
 
 const messageOne = document.querySelector('#message-1');
 const messageTwo = document.querySelector('#message-2');
@@ -10,7 +10,10 @@ const messageTwo = document.querySelector('#message-2');
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const loc = search.value;
-    const unitValue = units.value;
+    // const unitValue = units.value;
+    // console.log(units)
+    // const unitValue = weatherForm
+    // console.log(unitValue)
 
     messageOne.textContent = "Loading Weather...";
     messageTwo.textContent = '';
@@ -18,7 +21,6 @@ weatherForm.addEventListener('submit', (e) => {
         response.json().then((jsonResp) => {
 
             if (jsonResp.error) {
-
                 messageOne.textContent = jsonResp.error;
             } else {
                 messageOne.textContent = "LOCATION: " + jsonResp.location.location + " with latitude '" + jsonResp.location.latitude + "' and longitude '" + jsonResp.location.longitude + "'.";
