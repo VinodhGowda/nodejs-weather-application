@@ -12,7 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node src/webserver.js"
+    "start": "node src/webserver.js",
+    "dev": "nodemon src/webserver.js -e hbs,js"
   },
   "repository": {
     "type": "git",
